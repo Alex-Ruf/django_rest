@@ -16,6 +16,7 @@ const AuthorItem = ({author}) => {
        </tr>
    )
 }
+
 const AuthorList = ({authors}) => {
    return (
        <table>
@@ -32,6 +33,7 @@ const AuthorList = ({authors}) => {
        </table>
    )
 }
+
 
 
 export default AuthorList

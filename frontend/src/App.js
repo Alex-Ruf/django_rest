@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import AuthorList from './components/Author.js'
+import MenuList from './components/Menu'
+import FooterList from './components/Footer'
 import axios from 'axios'
 
 
@@ -28,8 +30,11 @@ componentDidMount() {
 
    render () {
        return (
+
            <div>
+               <MenuList/>
                <AuthorList authors={this.state.authors} />
+               <FooterList/>
            </div>
        )
    }
