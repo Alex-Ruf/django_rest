@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c446346a-3bc0-4aa6-b14f-a2afa550a896" name="Default Changelist" comment="2">
-      <change beforePath="$PROJECT_DIR$/authors/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/authors/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authors/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authors/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authors/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/authors/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rest/settings.py" afterDir="false" />
+    <list default="true" id="c446346a-3bc0-4aa6-b14f-a2afa550a896" name="Default Changelist" comment="2_2">
+      <change beforePath="$PROJECT_DIR$/authors/json/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/authors/json/user.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +28,7 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="origin/10" />
+                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
               </list>
             </value>
           </entry>
@@ -38,6 +36,7 @@
       </branch-storage>
     </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -48,11 +47,13 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1slcUihhIBw5BxXC33qFkF5NIxo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -67,31 +68,6 @@
       <recent name="$PROJECT_DIR$/authors" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="rest" type="Python.DjangoServer" factoryName="Django server">
-      <module name="rest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/../django/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -100,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621450635235</updated>
-      <workItem from="1621450638099" duration="12002000" />
+      <workItem from="1621450638099" duration="14372000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1621610986421</created>
@@ -109,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621610986421</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2_2">
+      <created>1621616185261</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621616185261</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +111,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
+    <MESSAGE value="2_2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2_2" />
   </component>
 </project>
