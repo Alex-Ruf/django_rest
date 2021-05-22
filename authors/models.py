@@ -4,7 +4,7 @@ from django.db import models
 
 class Author(AbstractUser):
 
-  
+
    birthday_year = models.PositiveIntegerField()
    email = models.EmailField(unique=True)
 
