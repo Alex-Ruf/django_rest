@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'authors',
     'corsheaders',
+    'rest_framework.authtoken',
     'todoapp',
-'django_filters',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,10 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
 
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100,
 
@@ -140,4 +145,4 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
-AUTH_USER_MODEL = 'authors.Author'
+#AUTH_USER_MODEL = 'authors.Author'

@@ -5,10 +5,10 @@ const AuthorItem = ({author}) => {
    return (
        <tr>
            <td>
-               {author.first_name}
+               {author.id}
            </td>
            <td>
-               {author.last_name}
+               {author.username}
            </td>
            <td>
                {author.birthday_year}
@@ -18,20 +18,15 @@ const AuthorItem = ({author}) => {
 }
 
 const AuthorList = ({authors}) => {
-   return (
-       <table>
-           <th>
-               First name
-           </th>
-           <th>
-               Last Name
-           </th>
-           <th>
-               Birthday year
-           </th>
-           {authors.map((author) => <AuthorItem author={author} />)}
-       </table>
-   )
+    return (
+        <table>
+
+            <th>ID</th>
+            <th>NAME</th>
+            <th>birthday year</th>
+            {authors.map((author) => <AuthorItem author={author} />)}
+        </table>
+    )
 }
 
 

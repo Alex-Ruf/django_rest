@@ -12,6 +12,7 @@ from rest_framework import mixins
 
 
 class AuthorModelViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+# class AuthorModelViewSet(ModelViewSet):
 
    queryset = Author.objects.all()
    serializer_class = AuthorModelSerializer
