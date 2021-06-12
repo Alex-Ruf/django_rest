@@ -17,4 +17,3 @@ class UserModelViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.
 
    queryset = User.objects.all()
    serializer_class = UserModelSerializer
-   permission_classes = [permissions.IsAuthenticated]

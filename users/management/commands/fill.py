@@ -4,7 +4,7 @@ import os
 from django.conf import settings
 from django.core.management import BaseCommand
 
-from authors.models import Author
+from users.models import User
 
 
 def load_from_json(file_name):
@@ -15,7 +15,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         users = load_from_json('user.json')
 
-        Author.objects.all().delete()
+        User.objects.all().delete()
         for user in users:
 
-            Author.objects.create_superuser(**user)
+            User.objects.create_superuser(**user)

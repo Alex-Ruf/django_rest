@@ -38,6 +38,7 @@ class App extends React.Component {
     cookies.set('user_token', user)
     this.setState({'token': token},()=>this.load_data())
     this.setState({'user_token':user})
+
     }
 
     is_authenticated() {
@@ -46,6 +47,9 @@ class App extends React.Component {
 
     logout() {
     this.set_token('','')
+    this.load_data()
+
+
 
     }
 
@@ -53,15 +57,15 @@ class App extends React.Component {
     const cookies = new Cookies()
         const user_token= cookies.get('user_token')
     const token = cookies.get('token')
-    this.setState({'token': token},()=>this.load_data())
-        this.setState({'user_token':user_token})
+    this.setState({'user_token':user_token,'token': token},()=>this.load_data())
+
     }
 
     get_token(username, password) {
     axios.post('http://127.0.0.1:8000/api-token-auth/', {username: username, password: password})
     .then(response => {
         this.set_token(response.data['token'],username)
-    }).catch(error => alert('Неверный логин или пароль'))
+    },this.load_data()).catch(error => alert('Неверный логин или пароль'))
     }
 
     get_headers() {
@@ -93,7 +97,15 @@ class App extends React.Component {
                         'todos': todos
                     }
                 )
-           }).catch(error => console.log(error))
+           }).catch(error => {
+               this.setState(
+                   {
+                       'users': [],
+                       'projects': [],
+                       'todos': [],
+                   }
+               )
+           })
 
 
     }
