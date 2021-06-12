@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 
 const ProjectItem = ({project}) => {
@@ -6,21 +7,24 @@ const ProjectItem = ({project}) => {
         <tr>
             <td>{project.id}</td>
             <td>{project.name}</td>
-            <td>{project.work_user}</td>
+            <td>{project.user}</td>
         </tr>
     )
 }
 
 
 const ProjectList = ({projects}) => {
+    let { id } = useParams();
+    let filtered_items = projects.filter((project) => project.user.id == id)
+
     return (
         <table>
             <tr>
                 <th>ID</th>
                 <th>NAME</th>
-                <th>AUTHOR</th>
+                <th>User</th>
             </tr>
-            {projects.map((project) => <ProjectItem project={project} />)}
+            {filtered_items.map((project) => <ProjectItem project={project} />)}
         </table>
     )
 }

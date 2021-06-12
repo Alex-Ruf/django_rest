@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'authors',
+    'users',
     'corsheaders',
     'rest_framework.authtoken',
     'todoapp',
@@ -145,4 +146,4 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
-#AUTH_USER_MODEL = 'authors.Author'
+AUTH_USER_MODEL = 'users.User'
