@@ -82,7 +82,7 @@ class App extends React.Component {
     load_data(){
        const headers = this.get_headers()
            axios.all([
-           axios.get('http://127.0.0.1:8000/api/users',{headers}),
+           axios.get('http://127.0.0.1:8000/api/2.0/users',{headers}),
            axios.get('http://127.0.0.1:8000/api/projects',{headers}),
            axios.get('http://127.0.0.1:8000/api/todos',{headers})
        ])

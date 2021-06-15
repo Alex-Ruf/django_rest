@@ -7,15 +7,14 @@ const ProjectItem = ({project}) => {
         <tr>
             <td>{project.id}</td>
             <td>{project.name}</td>
-            <td>{project.user}</td>
+            <td>{project.user.username}</td>
         </tr>
     )
 }
 
-
 const ProjectList = ({projects}) => {
     let { id } = useParams();
-    let filtered_items = projects.filter((project) => project.user.id == id)
+    let filtered_items = projects.filter((project) => project._id == id)
 
     return (
         <table>
