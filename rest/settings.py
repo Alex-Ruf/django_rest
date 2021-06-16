@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'todoapp',
     'django_filters',
     'drf_yasg',
+
+    'graphene_django',
+
 ]
 
 MIDDLEWARE = [
@@ -147,5 +150,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
+
+GRAPHENE = {
+    "SCHEMA": "rest.schema.schema"
+}
 
 AUTH_USER_MODEL = 'users.User'

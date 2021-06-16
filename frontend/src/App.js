@@ -82,12 +82,13 @@ class App extends React.Component {
     load_data(){
        const headers = this.get_headers()
            axios.all([
-           axios.get('http://127.0.0.1:8000/api/2.0/users',{headers}),
+           // axios.get('http://127.0.0.1:8000/api/2.0/users',{headers}),
+           axios.get('http://127.0.0.1:8000/graphql/?query={allUsers{id username birthdayYear }}',{headers}),
            axios.get('http://127.0.0.1:8000/api/projects',{headers}),
            axios.get('http://127.0.0.1:8000/api/todos',{headers})
        ])
            .then(responseArr => {
-               const users= responseArr[0].data.results
+               const users= responseArr[0].data.data.allUsers
                const projects = responseArr[1].data.results
                const todos = responseArr[2].data.results
                 this.setState(
