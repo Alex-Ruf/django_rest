@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from .models import User
-from .serializers import UserModelSerializer
+from .serializers import UserModelSerializer, UserModelSerializerV2
 from rest_framework.renderers import *
 from rest_framework.views import *
 from rest_framework.generics import ListAPIView, RetrieveAPIView,UpdateAPIView
@@ -16,5 +16,8 @@ class UserModelViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.
 # class AuthorModelViewSet(ModelViewSet):
 
    queryset = User.objects.all()
-   serializer_class = UserModelSerializer
-   permission_classes = [permissions.IsAuthenticated]
+
+   def get_serializer_class(self):
+      if self.request.version == '2.0':
+         return UserModelSerializerV2
+      return UserModelSerializer

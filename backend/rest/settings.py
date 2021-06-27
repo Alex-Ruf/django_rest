@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-uvzh5ujfjyons-g%q1r6&d&xsi5zg2-byp=96ag40w1(y(qvki
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -36,12 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'authors',
     'users',
     'corsheaders',
     'rest_framework.authtoken',
     'todoapp',
     'django_filters',
+    'drf_yasg',
+
+    'graphene_django',
+
 ]
 
 MIDDLEWARE = [
@@ -81,9 +84,19 @@ WSGI_APPLICATION = 'rest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'library',
+        'USER': 'alex',
+        'PASSWORD': 'alex123456',
+        'HOST': 'db',
+        'PORT': '5432',
+        }
+
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 # Password validation
@@ -118,6 +131,8 @@ USE_L10N = True
 USE_TZ = True
 
 REST_FRAMEWORK = {
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
+
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
@@ -145,5 +160,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
+
+GRAPHENE = {
+    "SCHEMA": "rest.schema.schema"
+}
 
 AUTH_USER_MODEL = 'users.User'

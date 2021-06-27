@@ -11,7 +11,7 @@ const UserItem = ({user}) => {
                {user.username}
            </td>
            <td>
-               {user.birthday_year}
+               {user.birthdayYear}
            </td>
        </tr>
    )

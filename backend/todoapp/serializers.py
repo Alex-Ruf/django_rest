@@ -1,10 +1,19 @@
 from rest_framework.serializers import *
+
+from users.serializers import UserModelSerializer
 from .models import Project,ToDo,User
 
 
-class ProjectModelSerializer(ModelSerializer):
+class ProjectModelSerializerBase(ModelSerializer):
 
    class Meta:
+       model = Project
+       fields = ('id','name','user',)
+
+
+class ProjectModelSerializer(ModelSerializer):
+    user= UserModelSerializer()
+    class Meta:
        model = Project
        fields = ('id','name','user',)
 
